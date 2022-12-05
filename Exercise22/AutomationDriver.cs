@@ -162,8 +162,9 @@ class AutomationDriver
         IWebElement openWindow = driver.FindElement(By.Id("openwindow"));
         openWindow.Click();
         Thread.Sleep(3000);
+        driver.SwitchTo().Window(driver.WindowHandles[1]);
+        driver.Close();
         driver.SwitchTo().Window(driver.WindowHandles[0]);
-        Thread.Sleep(3000);
         /*  WebElement text = (WebElement)driver.FindElement(By.Id("home"));
           if (text.GetAttribute("homepage") == "true")
           {
@@ -181,8 +182,9 @@ class AutomationDriver
         IWebElement openTab = driver.FindElement(By.Id("opentab"));
         openTab.Click();
         Thread.Sleep(5000);
+        driver.SwitchTo().Window(driver.WindowHandles[1]);
+        driver.Close();
         driver.SwitchTo().Window(driver.WindowHandles[0]);
-        Thread.Sleep(3000);
     }
 
     static public void excerciseSeven()
